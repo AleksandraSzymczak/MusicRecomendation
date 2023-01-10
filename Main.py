@@ -2,7 +2,7 @@ import sys
 from PyQt6 import QtWidgets, uic
 from itertools import count
 
-from MainWindowC import Ui_Form
+from MainWindowCB import Ui_Form
 from DialogWindow import Ui_Form as Ui_Form_dialog
 import Algorithm as al
 import Data_prep
