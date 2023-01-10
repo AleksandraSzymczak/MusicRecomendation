@@ -2,7 +2,7 @@ import sys
 from PyQt6 import QtWidgets, uic
 from itertools import count
 
-from MainWindow import Ui_Form
+from MainWindowC import Ui_Form
 from DialogWindow import Ui_Form as Ui_Form_dialog
 import Algorithm as al
 import Data_prep
@@ -40,9 +40,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_Form):
         self.comboBoxes = [self.comboBox,self.comboBox_2,self.comboBox_3,
                            self.comboBox_4,self.comboBox_5,self.comboBox_6,self.comboBox_7,
                            self.comboBox_8]
+        self.checkBoxes = [self.checkBox,self.checkBox_2,self.checkBox_3,self.checkBox_4,self.checkBox_5,
+                           self.checkBox_6,self.checkBox_7,self.checkBox_8]
         for key in range(0,8):
-            self.content_table.append(self.comboBoxes[key].currentText())
-            print(self.comboBoxes[key].currentText())
+            if(self.checkBoxes[key].isChecked()):
+                self.content_table.append(self.comboBoxes[key].currentText())
+                print(self.comboBoxes[key].currentText())
 
         self.res = al.reasult(data,data_for,self.content_table)
         self.PopWindow = DialogWindow()
