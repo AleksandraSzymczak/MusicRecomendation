@@ -15,7 +15,11 @@ def reasult(context,data_for,a):
     array = context_1.to_numpy()
 
     points1 = np.asarray(array)
-    point2 = [[5,5,5,5,5, 5,5,5]]
+    point2 =[]
+    temp = []
+    for item in range(0,np.size(a)):
+        temp.append(5)
+    point2.append(temp)
     test = euclidean_distances(points1,point2)
 
     df = pd.DataFrame(test,columns=['Distance'])
